@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Recherche Géospatiale
+  body
+    h1 Recherche Géospatiale
+    form(action='/geo-search-results' method='get')
+      label(for='latitude') Latitude:
+      input(type='text' name='latitude' id='latitude' required)
+      br
+      label(for='longitude') Longitude:
+      input(type='text' name='longitude' id='longitude' required)
+      br
+      label(for='radius') Rayon (en °):
+      input(type='text' name='radius' id='radius' required)
+      br
+      button(type='submit') Rechercher
+

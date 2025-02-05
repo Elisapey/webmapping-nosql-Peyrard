@@ -1,0 +1,16 @@
+html
+   head
+       title Recherche
+   body
+     h1 Résultats
+     div
+       each result in results
+         div
+           h2= result.properties.ins_nom
+           p
+             span Type :
+             span= result.properties.eqt_type
+           p
+             span Localisation :
+             span= result.geometry.coordinates.join(", ")
+

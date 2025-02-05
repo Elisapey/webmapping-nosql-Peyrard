@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Recherche Géographique
+    link(rel="stylesheet", href="/public/style.css")
+  body
+    h1 Recherche Géographique
+
+    form(action="/geo-search", method="get")
+      label(for="latitude") Latitude :
+      input(type="text", name="latitude", placeholder="Ex: 48.8566")
+
+      label(for="longitude") Longitude :
+      input(type="text", name="longitude", placeholder="Ex: 2.3522")
+
+      label(for="radius") Rayon (en degrés) :
+      input(type="text", name="radius", placeholder="Ex: 0.01")
+
+      button(type="submit") Rechercher
+
+    if results.length
+      h2 Résultats de la recherche
+      ul
+        each result in results
+          li= JSON.stringify(result)
+    else
+      p Aucun résultat à afficher.
+
+    a(href="/") Retour à l'accueil
+

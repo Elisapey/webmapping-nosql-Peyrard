@@ -1,0 +1,22 @@
+html
+   head
+       link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css")
+       link(rel="stylesheet", type="text/css", href="public/style.css")
+       script(type="text/javascript", src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js")
+       title Recherche
+   body
+     div#map
+     h1 Résultats
+     div
+       each result in results
+         div
+           h2= result.properties.ins_nom
+           p
+             span Type :
+             span= result.properties.eqt_type
+           p
+             span Localisation :
+             span= result.geometry.coordinates.join(", ")
+   script(type="text/javascript", src="public/map.js")
+
+
